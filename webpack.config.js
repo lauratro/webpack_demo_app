@@ -9,6 +9,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   module: {
-    rules: [{ test: /\.css$/, use: ["style-loader","css-loader"] }], 
+    rules: [
+      { test: /\.css$/, 
+      use: ["style-loader", //3. inject style in to the dom
+       "css-loader",// Turn css in common js
+        "sass-loader"] // Turns sass in to css
+     },
+    ],
   },
 };
